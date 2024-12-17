@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Valdisnn, https://github.com/Valdisnn">
+    <title>Задание 2.1</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="js/main.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Задание 2.1</h1>
+        <form id="arrayForm">
+            <label for="arraySize">Создайте одномерный массив. Выведите его содержимое на экран. Выполните реверс
+                содержимого массива (переверните наоборот: первый элемент меняется местами с последним, второй с
+                предпоследним и т.д.). Выведите содержимое на экран.</label>
+            <input type="number" id="arraySize" min="1" placeholder="Размер массива" required>
+            <button type="submit" id="createArrayButton">Создать массив</button>
+        </form>
+        <p id="originalArray"></p>
+        <div id="steps"></div>
+        <p id="reversedArray"></p>
+        <button id="reverseButton" disabled>Перевернуть массив</button>
+        <button id="resetButton" disabled>Сброс</button>
+    </div>
+</body>
+
+</html>
