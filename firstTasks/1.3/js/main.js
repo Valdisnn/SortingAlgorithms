@@ -4,13 +4,15 @@ document.addEventListener("DOMContentLoaded", function () {
   const generateBtn = document.getElementById("generateBtn");
   const resultDiv = document.getElementById("result");
 
+  // Генерация
   generateBtn.addEventListener("click", function () {
     let numbers = [];
     let i = 0;
 
+    // Генерация 4 рандомов
     while (i < 4) {
       let randomNum = Math.random() * 100;
-      let roundedNum = randomNum - (randomNum % 1);
+      let roundedNum = randomNum - (randomNum % 1); // Округление до целого числа
       numbers[i] = roundedNum;
       i++;
     }
@@ -21,19 +23,21 @@ document.addEventListener("DOMContentLoaded", function () {
     let minCount = 0;
 
     i = 0;
+
+    // Поиск MAX MIN
     while (i < 4) {
       if (numbers[i] > max) {
         max = numbers[i];
-        maxCount = 1;
+        maxCount = 1; // Сброс счётчика для нового MAX
       } else if (numbers[i] === max) {
-        maxCount++;
+        maxCount++; // Инкремент при совпадении
       }
 
       if (numbers[i] < min) {
         min = numbers[i];
-        minCount = 1;
+        minCount = 1; // Сброс счётчика для нового MIN
       } else if (numbers[i] === min) {
-        minCount++;
+        minCount++; // Инкремент при совпадении
       }
 
       i++;
@@ -41,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let resultText = "Числа: ";
     i = 0;
+
     while (i < 4) {
       resultText += numbers[i] + " ";
       i++;

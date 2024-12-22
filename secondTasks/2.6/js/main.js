@@ -26,11 +26,12 @@ document.addEventListener("DOMContentLoaded", () => {
     displayArrays(array, mirroredArray);
   });
 
+  // Создание массива с 1ми
   function createArray(rows, cols, ones) {
     const array = [];
     let onesPlaced = 0;
 
-    // Создаем массив и заполняем нулями
+    // Создание массива с 0ми
     for (let i = 0; i < rows; i++) {
       array[i] = [];
       for (let j = 0; j < cols; j++) {
@@ -38,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // Расставляем единицы случайным образом
+    // Рандомная расстановка 1ц
     while (onesPlaced < ones) {
       const randomRow = Math.floor(Math.random() * rows);
       const randomCol = Math.floor(Math.random() * cols);
@@ -52,6 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return array;
   }
 
+  // Зеркальное отражение массива
   function mirrorArray(array) {
     const rows = array.length;
     const cols = array[0].length;
@@ -67,9 +69,10 @@ document.addEventListener("DOMContentLoaded", () => {
     return mirrored;
   }
 
+  // Вывод в DOM исходного и зеркального массива
   function displayArrays(original, mirrored) {
     const rows = original.length;
-    let output = "";
+    let output = "<pre>";
 
     for (let i = 0; i < rows; i++) {
       output +=
@@ -79,6 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "\n";
     }
 
-    resultDiv.textContent = output;
+    output += "</pre>";
+    resultDiv.innerHTML = output;
   }
 });

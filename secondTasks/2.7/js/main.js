@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const resultContainer = document.getElementById("result");
 
   generateArrayButton.addEventListener("click", () => {
-    const missingNumber = Math.floor(Math.random() * 65536); // Диапазон от 0 до 65535
-    const numbers = new Array(65535); // Массив длиной 65535 (вместо 65534)
+    const missingNumber = Math.floor(Math.random() * 65536); // Диапазон от 0 до 65535 (вместо встроенного метода с UInt16 который равен 65535)
+    const numbers = new Array(65535);
 
     // Заполнение от 0 до 65535, пропустив одно
     let index = 0;
@@ -31,10 +31,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const missingNum = sumExpected - sumActual;
 
-    // Выводим недостающее число
     resultContainer.textContent = `Отсутствующее число: ${missingNum}`;
 
-    // Выводим весь массив в консоль
+    // Вывод сгенерированного массива в консоль
     console.log(numbers);
   });
 });

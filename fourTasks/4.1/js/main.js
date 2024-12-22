@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
     arrayString += " ]";
-    generatedArrayDiv.textContent = `Сгенерированный массив: ${arrayString}`;
+    generatedArrayDiv.textContent = `Массив ${arrayString}`;
 
     // Поиск элемента
     const index = searchElement(array, target);

@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
+  // Матрица 6х6
   function generateMatrix() {
     const matrix = new Array(6);
     const tbody = document.querySelector("#matrix tbody");
@@ -20,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
         td.textContent = randomValue;
         matrix[i][j] = randomValue;
         if (i === j) {
-          td.classList.add("diagonal"); // класс для главной диагонали
+          td.classList.add("diagonal"); // Класс для главной диагонали
         }
         tr.appendChild(td);
       }
@@ -31,13 +32,14 @@ document.addEventListener("DOMContentLoaded", () => {
     return matrix;
   }
 
+  // Сумма элементов выше и ниже главной диагонали
   function calculateSum(matrix) {
     let sum = 0;
 
     for (let i = 0; i < 6; i++) {
       for (let j = 0; j < 6; j++) {
         if (i < j || i > j) {
-          sum += matrix[i][j];
+          sum += matrix[i][j]; // Добавляем элементы не находящиеся на главной диагонали
         }
       }
     }
@@ -45,6 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return sum;
   }
 
+  // Новая матрица, вызов старых функий
   function updateResult() {
     const matrix = generateMatrix();
     const sum = calculateSum(matrix);

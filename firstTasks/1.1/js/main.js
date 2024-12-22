@@ -1,10 +1,11 @@
 "use strict";
 
-document.addEventListener("DOMContentLoaded", (e) => {
+document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("number-form");
   const resultElement = document.getElementById("result");
   const resetButton = document.getElementById("reset-button");
 
+  // Проверка дубликатов в массиве
   const hasDuplicates = (numbers) => {
     for (let i = 0; i < 4; i++) {
       for (let j = i + 1; j < 4; j++) {
@@ -16,6 +17,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
     return false;
   };
 
+  // Очистка инпутов
   const clearInputs = () => {
     document.getElementById("num1").value = "";
     document.getElementById("num2").value = "";
@@ -24,6 +26,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
     resultElement.textContent = "";
   };
 
+  // Обработчик формы
   form.addEventListener("submit", (event) => {
     event.preventDefault();
 
@@ -50,5 +53,4 @@ document.addEventListener("DOMContentLoaded", (e) => {
   resetButton.addEventListener("click", clearInputs);
 
   resultElement.style.minHeight = "1.5em";
-  console.log(e, "Всё прогрузилось на ура ! =)");
 });

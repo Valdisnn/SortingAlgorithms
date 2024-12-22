@@ -5,31 +5,34 @@ document.addEventListener("DOMContentLoaded", () => {
   const resultElement = document.getElementById("result");
   const resetButton = document.getElementById("reset-button");
 
+  // Находит третье по величине число в массиве
   const findThirdLargest = (numbers) => {
-    let first = -Infinity,
-      second = -Infinity,
-      third = -Infinity;
+    let first = 0,
+      second = 0,
+      third = 0;
 
+    // Перебор всех чисел, далее переприсваивание
     for (let i = 0; i < numbers.length; i++) {
       if (numbers[i] > first) {
-        third = second;
-        second = first;
-        first = numbers[i];
+        third = second; // 3 на 2 место
+        second = first; // 1 на 2 место
+        first = numbers[i]; // Новое максимальное число
       } else if (numbers[i] > second && numbers[i] < first) {
-        third = second;
-        second = numbers[i];
+        third = second; // 2 на 3 место
+        second = numbers[i]; // Новое 2 по величине число
       } else if (numbers[i] > third && numbers[i] < second) {
-        third = numbers[i];
+        third = numbers[i]; // Новое 3 по величине число
       }
     }
 
-    if (third === -Infinity) {
-      return null;
+    if (third === 0) {
+      return null; // Если 3 не существует
     }
 
     return third;
   };
 
+  // Очистка инпутов
   const clearInputs = () => {
     document.getElementById("num1").value = "";
     document.getElementById("num2").value = "";
@@ -38,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     resultElement.textContent = "";
   };
 
+  // Обработчик формы
   form.addEventListener("submit", (event) => {
     event.preventDefault();
 

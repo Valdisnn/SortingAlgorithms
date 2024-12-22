@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
+  //Матрица 5х5
   function generateMatrix() {
     const matrix = [];
     const tbody = document.querySelector("#matrix tbody");
@@ -29,12 +30,14 @@ document.addEventListener("DOMContentLoaded", () => {
     return matrix;
   }
 
+  // Наименьший + элемент матрицы
   function findSmallestPositive(matrix) {
     let smallestPositive = null;
 
     for (let i = 0; i < 5; i++) {
       for (let j = 0; j < 5; j++) {
         const value = matrix[i][j];
+        // Обновляем наименьший положительный элемент
         if (
           value > 0 &&
           (smallestPositive === null || value < smallestPositive)
@@ -47,6 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return smallestPositive;
   }
 
+  // Новая матрица, вызов прошлых функций
   function updateResult() {
     const matrix = generateMatrix();
     const smallestPositive = findSmallestPositive(matrix);

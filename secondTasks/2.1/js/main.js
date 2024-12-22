@@ -11,14 +11,17 @@ document.addEventListener("DOMContentLoaded", () => {
     return arr;
   }
 
+  // trim без использования метода из JS
   function customTrim(s) {
     let start = 0;
     let end = s.length - 1;
 
+    // Убирает пробелы в начале строки
     while (start <= end && s[start] === " ") {
       start++;
     }
 
+    // Убирает пробелы в конце строки
     while (end >= start && s[end] === " ") {
       end--;
     }
@@ -31,6 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return trimmed;
   }
 
+  // join без использования метода из JS
   function customJoin(arr, separator = " ") {
     let result = "";
     for (let i = 0; i < getArrayLength(arr); i++) {
@@ -42,6 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return result;
   }
 
+  // Вывод массива в DOM
   function displayArray(array, elementId) {
     const element = document.getElementById(elementId);
     let arrayContent = "";
@@ -51,12 +56,13 @@ document.addEventListener("DOMContentLoaded", () => {
     element.textContent = `Массив: ${customTrim(arrayContent)}`;
   }
 
+  // Длина массива
   function getArrayLength(arr) {
     let i = 0;
     try {
       while (true) {
         if (arr[i] === undefined) {
-          throw "outOfBounds";
+          throw "outOfBounds"; // RangeError: offset is out of bounds или около того. outOfBounds проще гуглить чем написать что-то своё или консоль ковырять
         }
         i++;
       }
@@ -65,6 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // Реверс массива пошагово
   function reverseArray(arr) {
     const length = getArrayLength(arr);
     let step = 1;
@@ -75,6 +82,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const temp = arr[i];
       arr[i] = arr[length - 1 - i];
       arr[length - 1 - i] = temp;
+
+      // Отображение текущего состояния массива
       const stepElement = document.createElement("p");
       stepElement.textContent = `Шаг ${step}: Массив после обмена элементов: ${customJoin(
         arr
@@ -85,6 +94,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const arrayForm = document.getElementById("arrayForm");
+
+  // Создание массива
   arrayForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const sizeInput = document.getElementById("arraySize");
@@ -99,6 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const reverseButton = document.getElementById("reverseButton");
+
   reverseButton.addEventListener("click", () => {
     reverseArray(array);
     reverseButton.disabled = true;
@@ -106,6 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const resetButton = document.getElementById("resetButton");
+
   resetButton.addEventListener("click", () => {
     document.getElementById("originalArray").textContent = "";
     document.getElementById("reversedArray").textContent = "";

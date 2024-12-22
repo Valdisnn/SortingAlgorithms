@@ -9,11 +9,13 @@ document.addEventListener("DOMContentLoaded", function () {
     return A;
   }
 
+  // Отрицательное число в массиве
   function findFirstNegative(arr) {
     let value = null;
     let index = -1;
     let i = 0;
 
+    // Цикл по массиву, до тех пор пока не найдет отрицательное число
     while (i < 20) {
       if (arr[i] < 0) {
         value = arr[i];
@@ -26,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
     return { value: value, index: index };
   }
 
+  // Обновление вертски
   function updateResults() {
     const A = generateArray();
     const result = findFirstNegative(A);
@@ -42,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("negativeIndex").textContent = result.index;
   }
 
+  // Инициализация вывод
   updateResults();
 
   document.getElementById("resetButton").addEventListener("click", function () {

@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
+  // Рандомная матрица 5x3
   function generateMatrix() {
     const matrix = [];
     const tbody = document.querySelector("#matrix tbody");
@@ -29,11 +30,12 @@ document.addEventListener("DOMContentLoaded", () => {
     return matrix;
   }
 
+  // Сумма + элементов во 2 столбце
   function calculateSum(matrix) {
     let sum = 0;
 
     for (let i = 0; i < 5; i++) {
-      const value = matrix[i][1];
+      const value = matrix[i][1]; // Второй столбец
       if (value > 0) {
         sum += value;
       }
@@ -42,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return sum;
   }
 
+  // Новую матрица, сумма и вывод
   function updateResult() {
     const matrix = generateMatrix();
     const sum = calculateSum(matrix);
