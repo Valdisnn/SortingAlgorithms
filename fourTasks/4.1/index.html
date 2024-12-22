@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Valdisnn, https://github.com/Valdisnn">
+    <title>Задание 4.1</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="js/main.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Задание 4.1</h1>
+        <p>Написать программу, реализующую поиск заданного элемента в неупорядоченном массиве.</p>
+        <form id="searchForm">
+            <input type="number" id="sizeInput" min="-100" max="100" placeholder="Размер массива, например: 10"
+                required>
+            <input type="number" id="elementInput" min="-100" max="100" placeholder="Искомый элемент, например: 65"
+                required>
+            <button type="submit">Поиск</button>
+            <button type="button" id="resetButton">Сброс</button>
+        </form>
+        <div id="result"></div>
+        <div id="generatedArray"></div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Valdisnn, https://github.com/Valdisnn">
+    <title>Задание 4.2</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="js/main.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Задание 4.2</h1>
+        <p>Написать программу, реализующую поиск подстроки в строке.</p>
+        <form id="searchForm">
+            <textarea id="mainString" rows="4" placeholder="Введите любой текст (основную строку)" required></textarea>
+            <input type="text" id="subString" placeholder="Введите искомое слово, предложение (подстроку)" required>
+            <button type="submit">Найти</button>
+            <button type="button" id="resetButton">Сброс</button>
+        </form>
+        <p id="stringLengthDisplay">Длина строки: 0</p>
+        <div id="result"></div>
+    </div>
+</body>
+
+</html>
